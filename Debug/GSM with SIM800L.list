@@ -410,11 +410,11 @@ void General_Run(void) {
 			HAL_Delay(1000);
  8000384:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
  8000388:	f001 f80e 	bl	80013a8 <HAL_Delay>
-			OLED_ClearArea(30, 16, 98, 48);
+			OLED_ClearArea(40, 16, 98, 48);
  800038c:	2330      	movs	r3, #48	@ 0x30
  800038e:	2262      	movs	r2, #98	@ 0x62
  8000390:	2110      	movs	r1, #16
- 8000392:	201e      	movs	r0, #30
+ 8000392:	2028      	movs	r0, #40	@ 0x28
  8000394:	f000 f984 	bl	80006a0 <OLED_ClearArea>
 
 

@@ -108,7 +108,7 @@ void General_Run(void) {
 			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
 			HAL_Delay(1000);
-			OLED_ClearArea(30, 16, 98, 48);
+			OLED_ClearArea(40, 16, 98, 48);
 
 
         }
