@@ -134,11 +134,10 @@ void General_Run(void) {
  80001a2:	f000 fa5b 	bl	800065c <OLED_Print>
     OLED_Update();
  80001a6:	f000 fa75 	bl	8000694 <OLED_Update>
+
     while (1)
     {
-        // ========================
         // BUTTON 1  → PB13
-        // ========================
     	if (HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == GPIO_PIN_RESET)
  80001aa:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
  80001ae:	4882      	ldr	r0, [pc, #520]	@ (80003b8 <General_Run+0x25c>)
@@ -226,11 +225,11 @@ void General_Run(void) {
  800023e:	f44f 5180 	mov.w	r1, #4096	@ 0x1000
  8000242:	485d      	ldr	r0, [pc, #372]	@ (80003b8 <General_Run+0x25c>)
  8000244:	f001 fcdd 	bl	8001c02 <HAL_GPIO_WritePin>
+    	}
 
 
-        // ========================
+
         // BUTTON 2  → PB14
-        // ========================
         if (HAL_GPIO_ReadPin(BTN2_GPIO_Port, BTN2_Pin) == GPIO_PIN_RESET)
  8000248:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
  800024c:	485a      	ldr	r0, [pc, #360]	@ (80003b8 <General_Run+0x25c>)
@@ -316,11 +315,11 @@ void General_Run(void) {
  80002dc:	f44f 5180 	mov.w	r1, #4096	@ 0x1000
  80002e0:	4835      	ldr	r0, [pc, #212]	@ (80003b8 <General_Run+0x25c>)
  80002e2:	f001 fc8e 	bl	8001c02 <HAL_GPIO_WritePin>
+
         }
 
-        // ========================
+
         // BUTTON 3  → PB15
-        // ========================
         if (HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET)
  80002e6:	f44f 4100 	mov.w	r1, #32768	@ 0x8000
  80002ea:	4833      	ldr	r0, [pc, #204]	@ (80003b8 <General_Run+0x25c>)
@@ -417,9 +416,7 @@ void General_Run(void) {
  8000392:	2028      	movs	r0, #40	@ 0x28
  8000394:	f000 f984 	bl	80006a0 <OLED_ClearArea>
 
-
         }
-
         OLED_Update();
  8000398:	f000 f97c 	bl	8000694 <OLED_Update>
     	if (HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == GPIO_PIN_RESET)

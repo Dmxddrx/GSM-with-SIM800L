@@ -20,9 +20,7 @@ void General_Run(void) {
 
     while (1)
     {
-        // ========================
         // BUTTON 1  → PB13
-        // ========================
     	if (HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == GPIO_PIN_RESET)
     	{
     	    // Turn on LED (PB12)
@@ -51,9 +49,8 @@ void General_Run(void) {
     	}
 
 
-        // ========================
+
         // BUTTON 2  → PB14
-        // ========================
         if (HAL_GPIO_ReadPin(BTN2_GPIO_Port, BTN2_Pin) == GPIO_PIN_RESET)
         {
 
@@ -80,9 +77,8 @@ void General_Run(void) {
 
         }
 
-        // ========================
+
         // BUTTON 3  → PB15
-        // ========================
         if (HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET)
         {
         	HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
@@ -110,9 +106,7 @@ void General_Run(void) {
 			HAL_Delay(1000);
 			OLED_ClearArea(40, 16, 98, 48);
 
-
         }
-
         OLED_Update();
     }
 }
