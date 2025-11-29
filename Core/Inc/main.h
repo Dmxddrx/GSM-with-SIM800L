@@ -28,6 +28,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
+#include "general.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -71,9 +72,9 @@ void Error_Handler(void);
 #define BTN3_Pin           GPIO_PIN_15     // PB15
 #define BTN3_GPIO_Port     GPIOB
 
-// --- SIM800L PWRKEY (if you use PB12) ---
-#define SIM800_PWRKEY_Pin      GPIO_PIN_12
-#define SIM800_PWRKEY_GPIO_Port GPIOB
+// --- LED (if you use PB12) ---
+#define LED_Pin      GPIO_PIN_12
+#define LED_GPIO_Port GPIOB
 
 /* USER CODE END Private defines */
 

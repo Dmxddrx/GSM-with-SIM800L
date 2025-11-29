@@ -23,6 +23,7 @@ Core/Src/oled.o: ../Core/Src/oled.c ../Core/Inc/oled.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ ../Core/Inc/general.h ../Core/Inc/oled.h ../Core/Inc/sim800l.h \
  F:/Program\ files/STM32CubeIDE_1.18.1/workspace_1.18.1/GSM\ with\ SIM800L/Drivers/Middlewares/SSD1306/ssd1306.h \
  F:/Program\ files/STM32CubeIDE_1.18.1/workspace_1.18.1/GSM\ with\ SIM800L/Drivers/Middlewares/SSD1306/fonts.h \
  F:/Program\ files/STM32CubeIDE_1.18.1/workspace_1.18.1/GSM\ with\ SIM800L/Drivers/Middlewares/SSD1306/fonts.h
@@ -52,6 +53,9 @@ Core/Src/oled.o: ../Core/Src/oled.c ../Core/Inc/oled.h ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+../Core/Inc/general.h:
+../Core/Inc/oled.h:
+../Core/Inc/sim800l.h:
 F:/Program\ files/STM32CubeIDE_1.18.1/workspace_1.18.1/GSM\ with\ SIM800L/Drivers/Middlewares/SSD1306/ssd1306.h:
 F:/Program\ files/STM32CubeIDE_1.18.1/workspace_1.18.1/GSM\ with\ SIM800L/Drivers/Middlewares/SSD1306/fonts.h:
 F:/Program\ files/STM32CubeIDE_1.18.1/workspace_1.18.1/GSM\ with\ SIM800L/Drivers/Middlewares/SSD1306/fonts.h:

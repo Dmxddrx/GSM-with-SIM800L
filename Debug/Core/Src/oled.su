@@ -4,6 +4,3 @@
 ../Core/Src/oled.c:24:6:OLED_Update	8	static
 ../Core/Src/oled.c:29:6:OLED_ClearArea	32	static
 ../Core/Src/oled.c:33:6:OLED_Rectangle	32	static
-../Core/Src/oled.c:38:6:OLED_ScrollRight	16	static
-../Core/Src/oled.c:44:6:OLED_ScrollLeft	16	static
-../Core/Src/oled.c:50:6:OLED_StopScroll	8	static
