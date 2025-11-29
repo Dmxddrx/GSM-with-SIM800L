@@ -12,13 +12,6 @@ void General_Run(void) {
     SIM800L_Init(&huart1);
 
 
-    char line[32];
-    char fstr[16];
-
-    char lat_str[20];
-    char lon_str[20];
-
-
     OLED_Clear();   // clear only once at start
     OLED_Rectangle(74, 0, 1, 12);
     OLED_Print(0, 27, "AnV:");
@@ -35,8 +28,7 @@ void General_Run(void) {
             OLED_Update();
 
             // --- Send Cancel SMS ---
-            SIM900_SendSMS("+94765370377",
-                           "Emergency Cancelled by Rider\nSerial No = 221");
+            SIM800L_SendSMS("+94765370377","Emergency Cancelled by Rider\nSerial No = 221");
 
             // Prevent SMS spamming
             HAL_Delay(3000);
