@@ -37,6 +37,13 @@ void General_Run(void) {
 
     	    HAL_Delay(3000);   // prevent multiple sending
 
+			for (int x = 0; x <= 100; x += 2) {
+			                OLED_ClearArea(49, 0, 128, 10);
+			                OLED_Print(x, 49, "SMS SENDING ...");
+			                OLED_Update();
+			                HAL_Delay(50);
+			            }
+
     	    // Turn off LED after action
     	    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
     	}
@@ -57,6 +64,14 @@ void General_Run(void) {
 							"Alert: Button 2 Pressed\nSerial No = 002");
 
 			HAL_Delay(3000);
+
+			for (int x = 0; x <= 100; x += 2) {
+			                OLED_ClearArea(49, 0, 128, 10);
+			                OLED_Print(x, 49, "SMS SENDING ...");
+			                OLED_Update();
+			                HAL_Delay(50);
+			            }
+
 			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
         }
@@ -76,6 +91,14 @@ void General_Run(void) {
 							"Alert: Button 3 Pressed\nSerial No = 003");
 
 			HAL_Delay(3000);
+
+			for (int x = 0; x <= 100; x += 2) {
+			                OLED_ClearArea(49, 0, 128, 10);
+			                OLED_Print(x, 49, "SMS SENDING ...");
+			                OLED_Update();
+			                HAL_Delay(50);
+			            }
+
 			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
         }
