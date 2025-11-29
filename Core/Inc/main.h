@@ -59,6 +59,23 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN Private defines */
+
+// --- Button GPIO Pins ---
+#define BTN1_Pin           GPIO_PIN_13     // PB13
+#define BTN1_GPIO_Port     GPIOB
+
+#define BTN2_Pin           GPIO_PIN_14     // PB14
+#define BTN2_GPIO_Port     GPIOB
+
+#define BTN3_Pin           GPIO_PIN_15     // PB15
+#define BTN3_GPIO_Port     GPIOB
+
+// --- SIM800L PWRKEY (if you use PB12) ---
+#define SIM800_PWRKEY_Pin      GPIO_PIN_12
+#define SIM800_PWRKEY_GPIO_Port GPIOB
+
+/* USER CODE END Private defines */
 
 /* USER CODE END Private defines */
 
