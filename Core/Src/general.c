@@ -30,7 +30,7 @@ void General_Run(void) {
                 OLED_Update();
 
                 SIM800L_SendSMS("+94765370377",
-                                "Alert: Button 1 Pressed\nSerial No = 221");
+                                "Alert: Button 1 Pressed\nSerial No = 001");
 
                 HAL_Delay(3000);   // prevent multiple sending
             }
@@ -49,7 +49,7 @@ void General_Run(void) {
                 OLED_Update();
 
                 SIM800L_SendSMS("+94765370377",
-                                "Alert: Button 2 Pressed\nSerial No = 221");
+                                "Alert: Button 2 Pressed\nSerial No = 002");
 
                 HAL_Delay(3000);
             }
@@ -64,11 +64,11 @@ void General_Run(void) {
             if (HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET)
             {
                 OLED_ClearArea(84, 16, 44, 10);
-                OLED_Print(84, 16, "CANCEL");
+                OLED_Print(84, 16, "BTN3");
                 OLED_Update();
 
                 SIM800L_SendSMS("+94765370377",
-                                "Emergency Cancelled by Rider\nSerial No = 221");
+                                "Alert: Button 3 Pressed\nSerial No = 003");
 
                 HAL_Delay(3000);
             }

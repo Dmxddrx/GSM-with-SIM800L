@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00003b3c  0800010c  0800010c  0000110c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000008b4  08003c48  08003c48  00004c48  2**2
+  2 .rodata       000008ac  08003c48  08003c48  00004c48  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080044fc  080044fc  00006064  2**0
+  3 .ARM.extab    00000000  080044f4  080044f4  00006064  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  080044fc  080044fc  000054fc  2**2
+  4 .ARM          00000008  080044f4  080044f4  000054f4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08004504  08004504  00006064  2**0
+  5 .preinit_array 00000000  080044fc  080044fc  00006064  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08004504  08004504  00005504  2**2
+  6 .init_array   00000004  080044fc  080044fc  000054fc  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08004508  08004508  00005508  2**2
+  7 .fini_array   00000004  08004500  08004500  00005500  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000064  20000000  0800450c  00006000  2**2
+  8 .data         00000064  20000000  08004504  00006000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          0000065c  20000064  08004570  00006064  2**2
+  9 .bss          0000065c  20000064  08004568  00006064  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  200006c0  08004570  000066c0  2**0
+ 10 ._user_heap_stack 00000600  200006c0  08004568  000066c0  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00006064  2**0
                   CONTENTS, READONLY
@@ -160,7 +160,7 @@ void General_Run(void) {
  80001ca:	4932      	ldr	r1, [pc, #200]	@ (8000294 <General_Run+0x138>)
  80001cc:	4832      	ldr	r0, [pc, #200]	@ (8000298 <General_Run+0x13c>)
  80001ce:	f000 fa37 	bl	8000640 <SIM800L_SendSMS>
-                                "Alert: Button 1 Pressed\nSerial No = 221");
+                                "Alert: Button 1 Pressed\nSerial No = 001");
 
                 HAL_Delay(3000);   // prevent multiple sending
  80001d2:	f640 30b8 	movw	r0, #3000	@ 0xbb8
@@ -207,7 +207,7 @@ void General_Run(void) {
  800021a:	4921      	ldr	r1, [pc, #132]	@ (80002a0 <General_Run+0x144>)
  800021c:	481e      	ldr	r0, [pc, #120]	@ (8000298 <General_Run+0x13c>)
  800021e:	f000 fa0f 	bl	8000640 <SIM800L_SendSMS>
-                                "Alert: Button 2 Pressed\nSerial No = 221");
+                                "Alert: Button 2 Pressed\nSerial No = 002");
 
                 HAL_Delay(3000);
  8000222:	f640 30b8 	movw	r0, #3000	@ 0xbb8
@@ -242,7 +242,7 @@ void General_Run(void) {
  8000254:	2110      	movs	r1, #16
  8000256:	2054      	movs	r0, #84	@ 0x54
  8000258:	f000 f98a 	bl	8000570 <OLED_ClearArea>
-                OLED_Print(84, 16, "CANCEL");
+                OLED_Print(84, 16, "BTN3");
  800025c:	4a11      	ldr	r2, [pc, #68]	@ (80002a4 <General_Run+0x148>)
  800025e:	2110      	movs	r1, #16
  8000260:	2054      	movs	r0, #84	@ 0x54
@@ -254,7 +254,7 @@ void General_Run(void) {
  800026a:	490f      	ldr	r1, [pc, #60]	@ (80002a8 <General_Run+0x14c>)
  800026c:	480a      	ldr	r0, [pc, #40]	@ (8000298 <General_Run+0x13c>)
  800026e:	f000 f9e7 	bl	8000640 <SIM800L_SendSMS>
-                                "Emergency Cancelled by Rider\nSerial No = 221");
+                                "Alert: Button 3 Pressed\nSerial No = 003");
 
                 HAL_Delay(3000);
  8000272:	f640 30b8 	movw	r0, #3000	@ 0xbb8
@@ -988,9 +988,9 @@ void SIM800L_SendSMS(const char *number, const char *message) {
  800069e:	46bd      	mov	sp, r7
  80006a0:	bd80      	pop	{r7, pc}
  80006a2:	bf00      	nop
- 80006a4:	08003cf8 	.word	0x08003cf8
- 80006a8:	08003d00 	.word	0x08003d00
- 80006ac:	08003d0c 	.word	0x08003d0c
+ 80006a4:	08003cf0 	.word	0x08003cf0
+ 80006a8:	08003cf8 	.word	0x08003cf8
+ 80006ac:	08003d04 	.word	0x08003d04
  80006b0:	20000164 	.word	0x20000164
 
 080006b4 <HAL_MspInit>:
@@ -1667,7 +1667,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  800099c:	20000064 	.word	0x20000064
   ldr r2, =_sidata
- 80009a0:	0800450c 	.word	0x0800450c
+ 80009a0:	08004504 	.word	0x08004504
   ldr r2, =_sbss
  80009a4:	20000064 	.word	0x20000064
   ldr r4, =_ebss
@@ -7650,7 +7650,7 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  8002d2a:	bf00      	nop
  8002d2c:	40022000 	.word	0x40022000
  8002d30:	40021000 	.word	0x40021000
- 8002d34:	08003d1c 	.word	0x08003d1c
+ 8002d34:	08003d14 	.word	0x08003d14
  8002d38:	20000000 	.word	0x20000000
  8002d3c:	2000000c 	.word	0x2000000c
 
@@ -7785,8 +7785,8 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8002dd2:	bf00      	nop
  8002dd4:	40021000 	.word	0x40021000
  8002dd8:	007a1200 	.word	0x007a1200
- 8002ddc:	080044b4 	.word	0x080044b4
- 8002de0:	080044c4 	.word	0x080044c4
+ 8002ddc:	080044ac 	.word	0x080044ac
+ 8002de0:	080044bc 	.word	0x080044bc
  8002de4:	003d0900 	.word	0x003d0900
 
 08002de8 <HAL_RCC_GetHCLKFreq>:
@@ -7832,7 +7832,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8002e18:	4618      	mov	r0, r3
  8002e1a:	bd80      	pop	{r7, pc}
  8002e1c:	40021000 	.word	0x40021000
- 8002e20:	08003d2c 	.word	0x08003d2c
+ 8002e20:	08003d24 	.word	0x08003d24
 
 08002e24 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -7858,7 +7858,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8002e40:	4618      	mov	r0, r3
  8002e42:	bd80      	pop	{r7, pc}
  8002e44:	40021000 	.word	0x40021000
- 8002e48:	08003d2c 	.word	0x08003d2c
+ 8002e48:	08003d24 	.word	0x08003d24
 
 08002e4c <RCC_Delay>:
   * @brief  This function provides delay (in milliseconds) based on CPU cycles method.
@@ -8732,10 +8732,10 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8003362:	4798      	blx	r3
  8003364:	3601      	adds	r6, #1
  8003366:	e7f2      	b.n	800334e <__libc_init_array+0x1e>
- 8003368:	08004504 	.word	0x08004504
- 800336c:	08004504 	.word	0x08004504
- 8003370:	08004504 	.word	0x08004504
- 8003374:	08004508 	.word	0x08004508
+ 8003368:	080044fc 	.word	0x080044fc
+ 800336c:	080044fc 	.word	0x080044fc
+ 8003370:	080044fc 	.word	0x080044fc
+ 8003374:	08004500 	.word	0x08004500
 
 08003378 <__retarget_lock_acquire_recursive>:
  8003378:	4770      	bx	lr
@@ -9239,9 +9239,9 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  80037fc:	a904      	add	r1, sp, #16
  80037fe:	f000 f87d 	bl	80038fc <_printf_i>
  8003802:	e7ed      	b.n	80037e0 <_svfiprintf_r+0x1c0>
- 8003804:	080044c6 	.word	0x080044c6
- 8003808:	080044cc 	.word	0x080044cc
- 800380c:	080044d0 	.word	0x080044d0
+ 8003804:	080044be 	.word	0x080044be
+ 8003808:	080044c4 	.word	0x080044c4
+ 800380c:	080044c8 	.word	0x080044c8
  8003810:	00000000 	.word	0x00000000
  8003814:	08003569 	.word	0x08003569
 
@@ -9573,8 +9573,8 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8003b28:	2500      	movs	r5, #0
  8003b2a:	f104 0619 	add.w	r6, r4, #25
  8003b2e:	e7f5      	b.n	8003b1c <_printf_i+0x220>
- 8003b30:	080044d7 	.word	0x080044d7
- 8003b34:	080044e8 	.word	0x080044e8
+ 8003b30:	080044cf 	.word	0x080044cf
+ 8003b34:	080044e0 	.word	0x080044e0
 
 08003b38 <memmove>:
  8003b38:	4288      	cmp	r0, r1
