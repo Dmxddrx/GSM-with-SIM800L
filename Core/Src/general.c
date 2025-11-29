@@ -37,12 +37,14 @@ void General_Run(void) {
 
     	    HAL_Delay(3000);   // prevent multiple sending
 
-			for (int x = 0; x <= 100; x += 2) {
-			                OLED_ClearArea(49, 0, 128, 10);
-			                OLED_Print(x, 49, "SMS SENDING ...");
+			for (int x = 0; x <= 30; x += 1) {
+			                OLED_ClearArea(0, 49, 128, 10);
+			                OLED_Print(x, 49, "SMS 1 SENDING ...");
 			                OLED_Update();
-			                HAL_Delay(50);
+			                HAL_Delay(100);
 			            }
+			OLED_ClearArea(0, 49, 128, 10);
+			OLED_Print(30, 49, "SMS 1 Sent");
 
     	    // Turn off LED after action
     	    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
@@ -65,12 +67,14 @@ void General_Run(void) {
 
 			HAL_Delay(3000);
 
-			for (int x = 0; x <= 100; x += 2) {
-			                OLED_ClearArea(49, 0, 128, 10);
-			                OLED_Print(x, 49, "SMS SENDING ...");
+			for (int x = 0; x <= 30; x += 1) {
+			                OLED_ClearArea(0, 49, 128, 10);
+			                OLED_Print(x, 49, "SMS 2 SENDING ...");
 			                OLED_Update();
-			                HAL_Delay(50);
+			                HAL_Delay(100);
 			            }
+			OLED_ClearArea(0, 49, 128, 10);
+			OLED_Print(30, 49, "SMS 2 Sent");
 
 			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
@@ -92,14 +96,20 @@ void General_Run(void) {
 
 			HAL_Delay(3000);
 
-			for (int x = 0; x <= 100; x += 2) {
-			                OLED_ClearArea(49, 0, 128, 10);
-			                OLED_Print(x, 49, "SMS SENDING ...");
+			for (int x = 0; x <= 30; x += 1) {
+			                OLED_ClearArea(0, 49, 128, 10);
+			                OLED_Print(x, 49, "SMS 3 SENDING ...");
 			                OLED_Update();
-			                HAL_Delay(50);
+			                HAL_Delay(100);
 			            }
+			OLED_ClearArea(0, 49, 128, 10);
+			OLED_Print(30, 49, "SMS 3 Sent");
 
 			HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+
+			HAL_Delay(1000);
+			OLED_ClearArea(30, 16, 98, 48);
+
 
         }
 
